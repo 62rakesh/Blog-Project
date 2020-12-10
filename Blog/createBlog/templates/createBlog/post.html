@@ -1,0 +1,37 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content %}
+<h1>User can add post here.</h1>
+<hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Add">
+</form>
+<hr>
+<table>
+    <tr>
+        <th></th>
+        <th>TITLE</th>
+        <th>BODY</th>
+        <th>POSTDATE</th>
+        <th>AUTHOR</th>
+        <th>CATEGORY</th>
+        <th>Action</th>
+        <th>Update</th>
+    </tr>
+    {% for posts in post %}
+    <tr>
+        <td></td>
+        <td><a href="{% url 'detail' posts.id %}">{{posts.title}}</a></td>
+        <td>{{posts.body}}</td>
+        <td>{{posts.postdate}}</td>
+        <td>{{posts.author}}</td>
+        <td>{{posts.category}}</td>
+        <td><a class="btn btn-sm btn-danger" style="color:red;" href="{% url 'delete_post' posts.id %}">Delete</a></td>
+        <td><a class="btn btn-sm btn-primary" style="color:green;" href="{% url 'update_post' posts.id %}">Update</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% endblock %}

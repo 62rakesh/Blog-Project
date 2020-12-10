@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Candal|Lora">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Blog|PostBlog</title>
+</head>
+
+<body>
+       <header>
+           <div class="logo">
+               <h1 class="logo-text"><span>Amaze</span>bloggers</h1>
+           </div>
+           <i class="fa fa-bars menu-toggle"></i>
+           <ul class="nav">
+               <li><a href="{% url 'index' %}">Home</a></li>
+               <li><a href="#" style="">Blog Page <i class="fa fa-chevron-down" style="font-size:.8em;"></i></a>
+                  <ul>
+                   <li><a href="{% url 'category' %}" style="color:green;">Add category</a></li>
+                   <li><a href="{% url 'post' %}" style="color:green;">Add post</a></li>
+               </ul>
+               </li>
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Services</a></li>
+               <li><a href="#">Contact us</a></li>
+               <li><a href="#">Sign Up</a></li>
+               <li><a href="#">Login</a></li>
+<!--               <li>-->
+<!--                   <a href="#">-->
+<!--                       <i class="fa fa-user"></i>-->
+<!--                       Rakesh Patra-->
+<!--                       <i class="fa fa-chevron-down" style="font-size:.8em;"></i>-->
+<!--                   </a>-->
+<!--                   <ul>-->
+<!--                       <li><a href="#">Dashboard</a></li>-->
+<!--                       <li><a href="#">Career</a></li>-->
+<!--                       <li><a href="#" class="logout">Logout</a></li>-->
+<!--                   </ul>-->
+<!--               </li>-->
+           </ul>
+       </header>
+           <div class="row">
+                <h2>Welcome to Amazebloggers, kickstart your blogging experience here!</h2>
+           <hr style="border:1px solid green;">
+           <br>
+               <div class="col" style="border:1px solid red;">
+                   <h3 style="text-align:center;">BLOG DETAIL</h3>
+                   <div class="card card-body">
+                       <table class="table table-sm">
+                           <tr>
+                               <th></th>
+                               <th>Si.no</th>
+                               <th>TITLE</th>
+                               <th>PREVIEW</th>
+                               <th>CATEGORY</th>
+
+                           </tr>
+                           {% for categories in category %}
+                           <tr>
+                               <td><a class="btn btn-sm btn-info" href="#">View</a></td>
+                               <td>{{categories.title}}</td>
+                               <td>{{categories.updated}}</td>
+                           </tr>
+                           {% endfor %}
+                       </table>
+
+                   </div>
+
+               </div>
+
+           </div>
+       </div>
+
+       <!--    JQuery           -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+       </script>
+       <!-- Slick Carousel       -->
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+       <!--     Custom script  -->
+       <script src="{%static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

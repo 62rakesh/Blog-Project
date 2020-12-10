@@ -1,0 +1,12 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content  %}
+<h3>Are you sure, you want to delete post {{item}} ?</h3>
+<br>
+<form action="{% url 'delete_post' item.id %}" method="POST">
+    {% csrf_token %}
+    <a style="color:red;" href="{% url 'post' %}">Cancel</a>
+
+    <input  type="submit" name="Confirm">
+</form>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content %}
+<div class="category">
+    <h2 style="text-align:center;">CATEGORY</h2>
+<hr>
+       <form action="" method="POST">
+           {% csrf_token %}
+            <label for="title" style="font-weight: bold;">Enter name:</label><br>
+            <input type="text" name="title" style="height: 50%;width: 50%;padding: 10px 10px;" placeholder="Enter name here.." required><br>
+
+            <label for="description" style="font-weight: bold;">Enter description:</label><br>
+            <input type="text" name="description" style="height: 50%;width: 50%;padding: 10px 10px;" placeholder="Enter description here..." required><br><br>
+            <button type="submit" class="btn btn-big" style="color:black; border:1px solid black;">
+               Submit</button>
+       </form>
+</div>
+
+
+<br><br>
+             <table >
+                 <tr>
+                     <th>TITLE</th>
+                     <th>DESCRIPTION</th>
+                     <th>CREATED DATE</th>
+                     <th>UPDATED DATE</th>
+                     <th>Action</th>
+                     <th>Update</th>
+                 </tr>
+                 {% for categories in category %}
+                 <tr>
+                     <td>{{categories.title}}</td>
+                     <td>{{categories.description}}</td>
+                     <td>{{categories.date}}</td>
+                     <td>{{categories.updated}}</td>
+                     <td><a class="btn btn-sm btn-danger" style="color:red;" href="{% url 'delete_cat' categories.id %}">Delete</a></td>
+                     <td><a class="btn btn-sm btn-primary" style="color:green;" href="{% url 'update_cat' categories.id %}">Update</a></td>
+                 </tr>
+                 {% endfor %}
+             </table>
+{% endblock %}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Candal|Lora">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Register</title>
+</head>
+
+<body>
+       <header>
+           <div class="logo">
+               <h1 class="logo-text"><span>Amaze</span>bloggers</h1>
+           </div>
+           <i class="fa fa-bars menu-toggle"></i>
+           <ul class="nav">
+               <li><a href="{% url 'blog' %}">Blog</a>
+<!--               <ul style="left:0px;">-->
+<!--                   <li><a href="#">Landing Page</a></li>-->
+<!--                   <li><a href="#">Team</a></li>-->
+<!--               </ul>-->
+               </li>
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Services</a></li>
+               <li><a href="{% url 'contact' %}">Contact us</a></li>
+               <li><a href="{% url 'register' %}">Sign Up</a></li>
+               <li><a href="{% url 'loginuser' %}">Login</a></li>
+<!--               <li>-->
+<!--                   <a href="#">-->
+<!--                       <i class="fa fa-user"></i>-->
+<!--                       Rakesh Patra-->
+<!--                       <i class="fa fa-chevron-down" style="font-size:.8em;"></i>-->
+<!--                   </a>-->
+<!--                   <ul>-->
+<!--                       <li><a href="{% url 'dashboard' %}">Dashboard</a></li>-->
+<!--                       <li><a href="#">Career</a></li>-->
+<!--                       <li><a href="#" class="logout">Logout</a></li>-->
+<!--                   </ul>-->
+
+<!--               </li>-->
+           </ul>
+       </header>
+       <div class="auth-content">
+           <h2 style="color:red;">{{error}}</h2>
+           <form method="POST" action="">
+               {% csrf_token %}
+                <h3 style="text-align:center;">Register</h3>
+               {% for message in messages %}
+                <p id="messages" style="color:green;">{{message}}</p>
+                {% endfor %}
+               <div>
+                   <label for="firstname">Firstname:</label><br>
+                   <input type="text" name="firstname" class="text-input" required>
+<!--                   {{form.firstname}}-->
+               </div>
+               <div>
+                   <label for="lastname">Lastname:</label><br>
+                   <input type="text" name="Lastname" class="text-input">
+<!--                   {{form.lastnmae}}-->
+               </div>
+               <div>
+                   <label for="emailaddress">Emailid:</label><br>
+                   <input type="email" name="Emailid" class="text-input" required>
+<!--                   {{form.emailid}}-->
+               </div>
+               <div>
+                   <label for="password">Password:</label><br>
+                   <input type="password" name="password" class="text-input" required>
+<!--                   {{form.password}}-->
+               </div>
+               <div>
+                   <label for="password2">Confirm password:</label><br>
+                   <input type="password" name="confirmpassword" class="text-input" required><br>
+<!--                   {{form.confirmpassword}}-->
+               </div>
+               <div>
+                   <button type="submit" class="btn btn-big" style="color:black;">Submit</button><br>
+               </div>
+               <p>Or <a href="{% url 'loginuser' %}">Login</a></p>
+           </form>
+       </div>
+
+
+
+<!--       Footer    -->
+           <div class="footer">
+               <div class="footer-content">
+                   <div class="footer-section About">
+                       <h1 class="logo-text"><span style="color:#80a5a3;">Amaze</span>blogger's</h1>
+                       <p>
+                           Amazeblogger's is a platform where blogger's have there say at any point of time,
+                           They can come and post there feelings and can explore manymore things of this beautiful
+                           world,keep hustling because something amazing is coming in your way.
+                       </p>
+                       <div class="contact">
+                           <span><i class="fa fa-phone"> &nbsp; 9910768023 </i></span>
+                           <span><i class="fa fa-envelope"> &nbsp; info@amazebloggers.com</i></span>
+                       </div>
+                       <div class="socials">
+                           <a href="#"><i class="fa fa-facebook"></i></a>
+                           <a href="#"><i class="fa fa-instagram"></i></a>
+                           <a href="#"><i class="fa fa-youtube"></i></a>
+                           <a href="#"><i class="fa fa-twitter"></i></a>
+
+                       </div>
+                   </div>
+                   <div class="footer-section Links">
+                       <h2 style="color:white;">Links</h2>
+                       <br>
+                       <ul>
+                           <a href="#">
+                               <li>Events</li>
+                           </a>
+                           <a href="#">
+                               <li>Teams</li>
+                           </a>
+                           <a href="#">
+                               <li>Mentors</li>
+                           </a>
+                           <a href="#">
+                               <li>Gallery</li>
+                           </a>
+                           <a href="#">
+                               <li>Terms and Conditions</li>
+                           </a>
+
+                       </ul>
+                   </div>
+                   <div class="footer-section Contact-form ">
+                       <h2 style="color:White;">Contact us</h2>
+                       <br>
+                       <form action="" method="POST">
+                           <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                           <br>
+                           <textarea name="message" class="text-input contact-input" placeholder="Your message"></textarea>
+                           <br>
+                           <button type="submit" class="btn btn-big" style="color:black;">
+                               <i class="fa fa-envelope"></i>
+                               Send</button>
+                       </form>
+                   </div>
+               </div>
+               <div class="footer-bottom">
+                 &copy;Amazebloggers.in | Designed by Amazebloggers.in
+               </div>
+
+           </div>
+
+<!--       //Footer  -->
+       <!--    JQuery           -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+       </script>
+       <!--     Custom script  -->
+       <script src="{%static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

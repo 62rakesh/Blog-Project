@@ -1,0 +1,11 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content %}
+ <h2>Update category.</h2>
+        <form action="#" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" name="Submit">
+            <button><a href="{% url 'category' %}">Cancel</a></button>
+        </form>
+{% endblock %}

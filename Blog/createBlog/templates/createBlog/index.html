@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Candal|Lora">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Blog</title>
+</head>
+
+<body>
+       <header>
+           <div class="logo">
+               <h1 class="logo-text"><span>Amaze</span>bloggers</h1>
+           </div>
+           <i class="fa fa-bars menu-toggle"></i>
+           <ul class="nav">
+               <li><a href="{% url 'blog' %}">Blog</a>
+<!--               <ul style="left:0px;">-->
+<!--                   <li><a href="#">Landing Page</a></li>-->
+<!--                   <li><a href="#">Team</a></li>-->
+<!--               </ul>-->
+               </li>
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Services</a></li>
+               <li><a href="{% url 'contact' %}">Contact us</a></li>
+               <li><a href="{% url 'register' %}">Sign Up</a></li>
+               <li><a href="{% url 'loginuser' %}">Login</a></li>
+<!--               <li>-->
+<!--                   <a href="#">-->
+<!--                       <i class="fa fa-user"></i>-->
+<!--                       Rakesh Patra-->
+<!--                       <i class="fa fa-chevron-down" style="font-size:.8em;"></i>-->
+<!--                   </a>-->
+<!--                   <ul>-->
+<!--                       <li><a href="{% url 'dashboard' %}">Dashboard</a></li>-->
+<!--                       <li><a href="#">Career</a></li>-->
+<!--                       <li><a href="#" class="logout">Logout</a></li>-->
+<!--                   </ul>-->
+
+<!--               </li>-->
+           </ul>
+       </header>
+<!--       Page Wrapper -->
+       <div class="page-wrapper">
+<!--           Page slider -->
+           <div class="post-slider">
+               <h1 class="slider-title">Trending posts</h1>
+               <i class="fa fa-chevron-left prev"></i>
+               <i class="fa fa-chevron-right next"></i>
+               <div class="post-wrapper">
+                   <div class="post">
+                       <img src="{% static 'images/travel.png' %}" alt="" class="slider-image">
+                       <div class="post-info">
+                           <h4><a href="single.html">One day your life will flash before your eyes.</a></h4>
+                           <i class="fa fa-user"> Rakesh Patra</i>
+                           &nbsp;
+                           <i class="fa fa-calendar">May 20,2020 </i>
+                       </div>
+                   </div>
+                   <div class="post">
+                       <img src="{% static 'images/python_blog.jpeg'  %}" alt="" class="slider-image">
+                       <div class="post-info">
+                           <h4><a href="single.html">Talk is cheap,show me the code!</a></h4>
+                           <i class="fa fa-user"> Rakes Patra</i>
+                           &nbsp
+                           <i class="fa fa-calendar"> May 21,2020</i>
+                       </div>
+                   </div>
+                   <div class="post">
+                       <img src="{% static 'images/career_blog.jpg' %}" alt="" class="slider-image">
+                       <div class="post-info">
+                           <h4><a href="single.html">It always seems impossible until it's done!</a></h4>
+                           <i class="fa fa-user"> Rakesh Patra</i>
+                           &nbsp;
+                           <i class="fa fa-calendar"> May 19,2020</i>
+                       </div>
+                   </div>
+                   <div class="post">
+                       <img src="{% static 'images/Cricket_blog.jpg' %}" alt="" class="slider-image">
+                       <div class="post-info"></div>
+                       <h4><a href="single.html">Indian cricket team,One team,One dream!</a></h4>
+                       <i class="fa fa-user"> Rakesh Patra</i>
+                       &nbsp;
+                       <i class="fa fa-calendar"> May 18,2020</i>
+                   </div>
+                   <div class="post" >
+                       <img src="{% static 'images/wakeup.jpg' %}" alt="" class="slider-image">
+                       <div class="post-info">
+                           <h4><a href="single.html">Benifits of waking up early!</a></h4>
+                           <i class="fa fa-user"> Rakesh Patra </i>
+                           &nbsp;
+                           <i class="fa fa-calendar"> May 22,2020</i>
+
+                       </div>
+                   </div>
+               </div>
+
+           </div>
+<!--           Page slide-->
+<!--           Content   -->
+           <div class="content clearfix" >
+<!--               Main content -->
+               <div class="main-content">
+                   <h1 class="recent-post-title">Recent Posts</h1>
+                   <div class="post">
+                       <img src="{% static 'images/Trip.jpg' %}" alt="" class="post-image">
+                       <div class="post-preview">
+                       <h3><a href="single.html">The strongest and sweetest songs yet remain to be sung.</a></h3>
+                       <i class="fa fa-user"> Rakesh Patra</i>
+                       &nbsp;
+                       <i class="fa fa-calendar"> May 22,2020</i>
+                       <p class="preview text">
+                           lorem ipsum dolor sit amet consectetuer, adipiscing elit.
+                           Exercitationem optio possimus a inventore maxim laborum.
+                       </p>
+                       <a href="single.html" class="btn read-more"> Read More</a>
+                   </div>
+                   </div>
+
+                   <div class="post">
+                       <img src="{% static 'images/post2.jpg' %}" alt="" class="post-image">
+                       <div class="post-preview">
+                       <h3><a href="single.html"> That love is all there is, is all we know of love.</a></h3>
+                       <i class="fa fa-user"> Rakesh Patra</i>
+                       &nbsp;
+                       <i class="fa fa-calendar"> May 22,2020</i>
+                       <p class="preview text">
+                           lorem ipsum dolor sit amet consectetuer, adipiscing elit.
+                           Exercitationem optio possimus a inventore maxim laborum.
+                       </p>
+                       <a href="single.html" class="btn read-more"> Read More</a>
+                   </div>
+                   </div>
+                   <div class="post">
+                       <img src="{% static 'images/post4.jpg' %}" alt="" class="post-image">
+                       <div class="post-preview">
+                       <h3><a href="single.html">Do anything but let it produce joy.</a></h3>
+                       <i class="fa fa-user"> Rakesh Patra</i>
+                       &nbsp;
+                       <i class="fa fa-calendar"> May 22,2020</i>
+                       <p class="preview text">
+                           lorem ipsum dolor sit amet consectetuer, adipiscing elit.
+                           Exercitationem optio possimus a inventore maxim laborum.
+                       </p>
+                       <a href="single.html" class="btn read-more"> Read More</a>
+                   </div>
+                   </div>
+                   <div class="post">
+                       <img src="{% static 'images/post5.jpg' %}" alt="" class="post-image">
+                       <div class="post-preview">
+                       <h3><a href="single.html">If you can dream it,you do it.</a></h3>
+                       <i class="fa fa-user"> Rakesh Patra</i>
+                       &nbsp;
+                       <i class="fa fa-calendar"> May 22,2020</i>
+                       <p class="preview text">
+                           lorem ipsum dolor sit amet consectetuer, adipiscing elit.
+                           Exercitationem optio possimus a inventore maxim laborum.
+                       </p>
+                       <a href="single.html" class="btn read-more"> Read More</a>
+                   </div>
+                   </div>
+
+               </div>
+<!--               //Main content-->
+               <div class="sidebar">
+                   <div class="section search">
+                       <h2 class="section-title"> Search</h2>
+                       <form action="index.html" method="post">
+                           <input type="text" name="search-term" class="text-input" placeholder="Search...">
+                       </form>
+                   </div>
+
+                   <div class="section topics">
+                       <h2 class="section-title">Topics</h2>
+                       <ul>
+                           <li><a href="#">Poems</a></li>
+                           <li><a href="#">Quotes</a></li>
+                           <li><a href="#">Fictions</a></li>
+                           <li><a href="#">Biography</a></li>
+                           <li><a href="#">Motivations</a></li>
+                           <li><a href="#">Inspirations</a></li>
+                           <li><a href="#">Life Lessons</a></li>
+                       </ul>
+
+                   </div>
+               </div>
+
+           </div>
+
+<!--           //Content-->
+
+       </div>
+<!--       Page Wrapper -->
+<!--       Footer    -->
+           <div class="footer">
+               <div class="footer-content">
+                   <div class="footer-section About">
+                       <h1 class="logo-text"><span style="color:#80a5a3;">Amaze</span>blogger's</h1>
+                       <p>
+                           Amazeblogger's is a platform where blogger's have there say at any point of time,
+                           They can come and post there feelings and can explore manymore things of this beautiful
+                           world,keep hustling because something amazing is coming in your way.
+                       </p>
+                       <div class="contact">
+                           <span><i class="fa fa-phone"> &nbsp; 9910768023 </i></span>
+                           <span><i class="fa fa-envelope"> &nbsp; info@amazebloggers.com</i></span>
+                       </div>
+                       <div class="socials">
+                           <a href="#"><i class="fa fa-facebook"></i></a>
+                           <a href="#"><i class="fa fa-instagram"></i></a>
+                           <a href="#"><i class="fa fa-youtube"></i></a>
+                           <a href="#"><i class="fa fa-twitter"></i></a>
+
+                       </div>
+                   </div>
+                   <div class="footer-section Links">
+                       <h2 style="color:white;">Links</h2>
+                       <br>
+                       <ul>
+                           <a href="#">
+                               <li>Events</li>
+                           </a>
+                           <a href="#">
+                               <li>Teams</li>
+                           </a>
+                           <a href="#">
+                               <li>Mentors</li>
+                           </a>
+                           <a href="#">
+                               <li>Gallery</li>
+                           </a>
+                           <a href="#">
+                               <li>Terms and Conditions</li>
+                           </a>
+
+                       </ul>
+                   </div>
+                   <div class="footer-section Contact-form ">
+                       <h2 style="color:White;">Contact us</h2>
+                       <br>
+                       <form action="" method="POST">
+                           <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                           <br>
+                           <textarea name="message" class="text-input contact-input" placeholder="Your message"></textarea>
+                           <br>
+                           <button type="submit" class="btn btn-big" style="color:black;">
+                               <i class="fa fa-envelope"></i>
+                               Send</button>
+                       </form>
+                   </div>
+               </div>
+               <div class="footer-bottom">
+                 &copy;Amazebloggers.in | Designed by Amazebloggers.in
+               </div>
+
+           </div>
+
+<!--       //Footer  -->
+       <!--    JQuery           -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+       </script>
+       <!-- Slick Carousel       -->
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+       <!--     Custom script  -->
+       <script src="{%static 'js/scripts.js' %}"></script>
+
+</body>
+</html>

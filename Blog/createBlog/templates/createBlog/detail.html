@@ -1,0 +1,8 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content %}
+<h1 style="text-align:center;">Blog Detail</h1>
+<h4 style="text-align:center;">{{user}} was written 4 blogs.</h4>
+<h3>Check the details of the blog.</h3>
+{{posts.title}}
+{% endblock %}

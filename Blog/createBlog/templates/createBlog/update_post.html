@@ -1,0 +1,14 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content %}
+<h2>Want to update ? </h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="Submit" name="submit">
+    <button><a href="{% url 'post' %}">Cancel</a></button>
+</form>
+
+
+
+{% endblock %}

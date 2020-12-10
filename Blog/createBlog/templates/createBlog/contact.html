@@ -1,0 +1,125 @@
+{% extends 'createBlog/main.html' %}
+{% load static %}
+{% block content  %}
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea, email {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<h2 style="text-align:center;">Query form</h2>
+{% for message in messages %}
+                <p id="messages" style="color:green;">{{message}}</p>
+                {% endfor %}
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" placeholder="Your name.." required>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" placeholder="Your last name..">
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" placeholder="Please enter address..">
+
+        <label for="emailaddress">Email Address:</label>
+        <input type="text" name="email" placeholder="Enter your email address.." >
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" placeholder="Write your query down.." style="height:200px;" required>
+
+        <button type="submit" class="btn btn-big" style="color:black; border:1px solid black;">Submit</button>
+    </form>
+</div>
+<div class="footer">
+               <div class="footer-content">
+                   <div class="footer-section About">
+                       <h1 class="logo-text"><span style="color:#80a5a3;">Amaze</span>blogger's</h1>
+                       <p>
+                           Amazeblogger's is a platform where blogger's have there say at any point of time,
+                           They can come and post there feelings and can explore manymore things of this beautiful
+                           world,keep hustling because something amazing is coming in your way.
+                       </p>
+                       <div class="contact">
+                           <span><i class="fa fa-phone"> &nbsp; 9910768023 </i></span>
+                           <span><i class="fa fa-envelope"> &nbsp; info@amazebloggers.com</i></span>
+                       </div>
+                       <div class="socials">
+                           <a href="#"><i class="fa fa-facebook"></i></a>
+                           <a href="#"><i class="fa fa-instagram"></i></a>
+                           <a href="#"><i class="fa fa-youtube"></i></a>
+                           <a href="#"><i class="fa fa-twitter"></i></a>
+
+                       </div>
+                   </div>
+                   <div class="footer-section Links">
+                       <h2 style="color:white;">Links</h2>
+                       <br>
+                       <ul>
+                           <a href="#">
+                               <li>Events</li>
+                           </a>
+                           <a href="#">
+                               <li>Teams</li>
+                           </a>
+                           <a href="#">
+                               <li>Mentors</li>
+                           </a>
+                           <a href="#">
+                               <li>Gallery</li>
+                           </a>
+                           <a href="#">
+                               <li>Terms and Conditions</li>
+                           </a>
+
+                       </ul>
+                   </div>
+                   <div class="footer-section Contact-form ">
+                       <h2 style="color:White;">Contact us</h2>
+                       <br>
+                       <form action="" method="POST">
+                           <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                           <br>
+                           <textarea name="message" class="text-input contact-input" placeholder="Your message"></textarea>
+                           <br>
+                           <button type="submit" class="btn btn-big" style="color:black;">
+                               <i class="fa fa-envelope"></i>
+                               Send</button>
+                       </form>
+                   </div>
+               </div>
+               <div class="footer-bottom">
+                 &copy;Amazebloggers.in | Designed by Amazebloggers.in
+               </div>
+
+           </div>
+{% endblock %}
